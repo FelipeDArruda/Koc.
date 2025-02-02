@@ -1,7 +1,7 @@
 .content-sumario {
   width: 100%;
   max-width: 1150px;
-  margin: 10px auto 40px auto;
+  margin: 130px auto 40px auto;
   padding: 0;
   height: 5vh;
   display: flex;
@@ -88,4 +88,16 @@
 
 .espaco {
   margin: 60px;
+}
+@media (max-width: 1000px) {
+.content-sumario {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 40px auto;
+  padding: 0;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
 }

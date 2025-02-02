@@ -9,7 +9,10 @@ O site é uma plataforma para promover a obra Knight of Chaos, um projeto de fic
 
 <br>
 
-Funcionalidades
+Funcionalidades:
+
+<br>
+
 🗂️ Menu de Navegação
 Inclui links para diferentes seções do site (Wiki, Projetos, Audiobook, Login) com um design responsivo que se adapta a dispositivos móveis.
 
@@ -31,6 +34,9 @@ Aparece em telas menores para exibir o menu de navegação.
 <br>
 
 Tecnologias Utilizadas:
+
+<br>
+
 HTML: Estrutura da página.
 CSS: Estilo e layout responsivo.
 JavaScript: Interatividade (carrossel e menu hambúrguer).

@@ -38,7 +38,13 @@ Tecnologias Utilizadas:
 <br>
 
 HTML: Estrutura da página.
+
+<br>
+
 CSS: Estilo e layout responsivo.
+
+<br>
+
 JavaScript: Interatividade (carrossel e menu hambúrguer).
 
 <br>

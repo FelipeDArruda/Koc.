@@ -11,26 +11,26 @@
     max-width: fit-content;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  
-  .toolbar-section {
+}
+
+.toolbar-section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0 0.5rem;
     position: relative;
-  }
-  
-  .toolbar-section:not(:last-child)::after {
+}
+
+.toolbar-section:not(:last-child)::after {
     content: "";
     position: absolute;
     right: -0.75rem;
     height: 60%;
     width: 1px;
     background: rgba(0, 0, 0, 0.1);
-  }
-  
-  .tool-btn {
+}
+
+.tool-btn {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -42,31 +42,31 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-  }
-  
-  .tool-btn:hover {
+}
+
+.tool-btn:hover {
     background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .tool-btn.active {
+}
+
+.tool-btn.active {
     background: #4a6fa5;
     color: white;
-  }
-  
-  .font-size-display {
+}
+
+.font-size-display {
     min-width: 40px;
     text-align: center;
     font-size: 0.9rem;
     color: #ffffff;
-  }
-  
-  /* Tooltips */
-  .tooltip {
+}
+
+/* Tooltips */
+.tooltip {
     position: relative;
     display: inline-block;
-  }
-  
-  .tooltip .tooltip-text {
+}
+
+.tooltip .tooltip-text {
     visibility: hidden;
     width: 100px;
     background-color: #333;
@@ -82,52 +82,52 @@
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 0.8rem;
-  }
-  
-  .tooltip:hover .tooltip-text {
+}
+
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
-  }
-  
-  /* Área de Leitura */
-  .reading-container {
+}
+
+/* Área de Leitura */
+.reading-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
-  }
-  
-  .book-content {
+}
+
+.book-content {
     line-height: 1.8;
     color: #333;
-  }
-  
-  .chapter-title {
+}
+
+.chapter-title {
     color: #4a6fa5;
     text-align: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .chapter-content {
+}
+
+.chapter-content {
     text-align: justify;
-  }
-  
-  .chapter-content p {
+}
+
+.chapter-content p {
     margin-bottom: 1.5rem;
-  }
-  
-  /* Navegação */
-  .chapter-nav {
+}
+
+/* Navegação */
+.chapter-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
-  }
-  
-  .nav-btn {
+}
+
+.nav-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -138,42 +138,91 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.2s ease;
-  }
-  
-  .nav-btn:hover {
+}
+
+.nav-btn:hover {
     background: #3a5a8f;
     transform: translateY(-2px);
-  }
-  
-  .chapter-progress {
+}
+
+.chapter-progress {
     color: #666;
     font-size: 0.9rem;
-  }
-  
-  /* Classes para temas */
-  .dark-mode {
+}
+
+/* Classes para temas */
+.dark-mode {
     background-color: #1a1a1a;
     color: #e0e0e0;
-  }
-  
-  .dark-mode .book-content {
+}
+
+.dark-mode .book-content,
+.dark-mode .chapter-content,
+.dark-mode .chapter-progress {
     color: #e0e0e0;
-  }
-  
-  .dark-mode .chapter-title {
+}
+
+.dark-mode .chapter-title {
     color: #6d9ee6;
-  }
-  
-  .sepia-mode {
+}
+
+.dark-mode .reading-container {
+    background-color: #1a1a1a;
+}
+
+/* Modo Sépia melhorado - Versão corrigida */
+body.sepia-mode {
     background-color: #f4ecd8;
-    color: #5b4636;
-  }
-  
-  /* Classes para largura */
-  .narrow-width .reading-container {
+    color: #000000; /* Define cor padrão do texto */
+}
+
+.sepia-mode .reading-container,
+.sepia-mode .book-content {
+    background-color: #f4ecd8;
+    color: #000000; /* Força cor preta */
+}
+
+.sepia-mode .chapter-content,
+.sepia-mode .chapter-content p {
+    color: #000000 !important; /* Garante que o texto fique preto */
+}
+
+.sepia-mode .chapter-title {
+    color: #8b6b3d;
+    border-bottom: 1px solid #d4c9a8; /* Borda que combina com o tema */
+}
+
+.sepia-mode .chapter-progress {
+    color: #5a4a30;
+}
+
+.sepia-mode .nav-btn {
+    background: #8b6b3d;
+    color: #fff;
+}
+
+.sepia-mode .nav-btn:hover {
+    background: #6d522d;
+}
+
+/* Melhorias adicionais para contraste */
+.sepia-mode .tool-btn {
+    color: #5a4a30;
+}
+
+.sepia-mode .tool-btn:hover {
+    background: rgba(139, 107, 61, 0.1);
+}
+
+.sepia-mode .font-size-display {
+    color: #5a4a30;
+}
+
+/* Classes para largura (mantidas) */
+.narrow-width .reading-container {
     max-width: 600px;
-  }
-  
-  .wide-width .reading-container {
+}
+
+.wide-width .reading-container { 
     max-width: 1000px;
-  }
+}

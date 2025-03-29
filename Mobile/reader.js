@@ -36,12 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
       button.addEventListener('click', function() {
         // Remove todas as classes de tema
         document.body.classList.remove('dark-mode', 'sepia-mode');
+        bookContent.style.color = ''; // Reseta a cor do texto
         
         // Adiciona a classe correspondente
         if (this.id === 'dark-mode') {
           document.body.classList.add('dark-mode');
+          bookContent.style.color = '#ffffff'; // Texto branco no modo escuro
         } else if (this.id === 'sepia-mode') {
           document.body.classList.add('sepia-mode');
+          bookContent.style.color = '#000000'; // Texto preto no modo sépia
         }
         
         // Atualiza botões ativos
@@ -79,4 +82,4 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Carregar próximo capítulo');
       // Implemente a lógica de carregamento aqui
     });
-  });
+});

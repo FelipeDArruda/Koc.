@@ -1,0 +1,65 @@
+
+/* --- Centralização Geral --- */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container dos capítulos (já centralizado pelo .intro) */
+.capitulos-container {
+  width: 100%;
+  max-width: 350px; /* Largura do card + margens */
+  text-align: center;
+}
+
+/* Estilo do card do capítulo */
+.capitulo-card {
+  width: 350px;
+  height: 70px;
+  background: rgba(30, 30, 30, 0.988);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem da capa (quadrada) */
+.capa-capitulo {
+  width: 45px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Container do título/número */
+.capitulo-info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.capitulo-numero {
+  display: block;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.capitulo-titulo {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+/* Data de postagem */
+.capitulo-data {
+  font-size: 10px;
+  color: #888;
+  margin-left: auto;
+  padding-right: 5px;
+}

@@ -1,0 +1,194 @@
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Container principal */
+.intro-bg {
+  padding: 0px 0;
+}
+
+.intro-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Layout de duas colunas para intro */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Estilos do texto */
+.intro-texto h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.intro-texto h1 span {
+  color: #FFBB00;
+}
+
+.intro-texto p {
+  font-size: 1.2rem;
+  color: #b2b2b2;
+  margin-bottom: 35px;
+  line-height: 1.8;
+}
+
+/* Botão estilizado */
+.botao-capitulo {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #0D0F15;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(255, 187, 0, 0.2);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.botao-capitulo:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.botao-capitulo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 187, 0, 0.3);
+  background-color: #FFD000;
+}
+
+.botao-capitulo:hover:before {
+  left: 100%;
+}
+
+.botao-capitulo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(255, 187, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .botao-capitulo {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+.lancamento {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.titulo-lancamento {
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 20px;
+}
+
+.titulo-lancamento::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 60px;
+  width: 3px;
+  background: white;
+}
+
+/* Media Queries */
+@media (max-width: 740px) {
+  .intro {
+    grid-template-columns: 1fr; /* Muda para uma coluna */
+    text-align: center; /* Centraliza o texto */
+    max-width: 400px; /* Reduz a largura máxima */
+    margin-top: 0px; /* Adiciona espaço acima */
+  }
+
+  .intro-texto {
+    order: 2; /* Move o texto para depois do lançamento */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos filhos */
+  }
+
+  .lancamento {
+    order: 1; /* Move o lançamento para cima */
+    justify-content: center; /* Centraliza o lançamento */
+    margin-bottom: 5px; /* Adiciona espaço abaixo */
+  }
+
+  .intro-texto h1 {
+    font-size: 2.2rem;
+    text-align: center; /* Garante que o título esteja centralizado */
+  }
+
+  .intro-texto p {
+    font-size: 1.1rem;
+    text-align: center; /* Garante que o parágrafo esteja centralizado */
+  }
+
+  .botao-capitulo {
+    margin: 0 auto; /* Centraliza o botão */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    gap: 10px;
+  }
+  
+  .intro-texto h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .intro-texto p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .titulo-lancamento {
+    font-size: 1.8rem;
+  }
+  
+  .botao-capitulo {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

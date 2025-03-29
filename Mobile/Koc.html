@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="Header.css">
+  <link rel="stylesheet" href="Header-login.css">
+
+  <link rel="stylesheet" href="cap.css">
+  <link rel="stylesheet" href="carrosell.css">
+  <link rel="stylesheet" href="indros.css">
+  <link rel="stylesheet" href="sumarioo.css">
+  <link rel="stylesheet" href="footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+<body>
+<header class="navbar" id="mainHeader">
+  <div class="navbar-container container">
+    <div class="menu-left">
+      <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items" id="menu-items">
+        <!-- Link de Login ATUALIZADO -->
+        <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+        <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+        <li><a href="./audiobook.html"><i class="fas fa-headphones"></i> Audiobook</a></li>
+      </ul>
+    </div>
+    <div class="login-logo">
+      <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65">
+    </div>
+  </div>
+</header>
+<!-- Linha horizontal branca -->
+<div class="login-modal" id="login-modal">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Fechar modal">&times;</button>
+    
+    <div class="login-tab">
+      <h2>Login</h2>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+        <!-- Link Cadastro - IMPORTANTE manter as classes -->
+        <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+      </form>
+    </div>
+    
+    <div class="register-tab" style="display:none">
+      <h2>Cadastro</h2>
+      <form class="register-form">
+        <div class="form-group">
+          <label for="new-username">Usuário:</label>
+          <input type="text" id="new-username" name="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">Senha:</label>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirme a Senha:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="login-btn">Cadastrar</button>
+        <!-- Link Login - IMPORTANTE manter as classes -->
+        <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- Restante do conteúdo -->
+  <div class="carrossel-wrapper">
+    <div class="carrossel-container">
+      <button class="carrossel-botao botao-anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="carrossel">
+        <div class="carrossel-slides">
+          <div class="slide">
+            <img src="img/img/image 11.png" alt="Imagem 1">
+          </div>
+          <div class="slide">
+            <img src="img/Imagem do WhatsApp de 2025-01-31 à(s) 17.07.03_7e08c1e6.jpg" alt="Imagem 2">
+          </div>
+          <div class="slide">
+            <img src="img/img/image 11.png" alt="Imagem 3">
+          </div>
+        </div>
+      </div>
+      
+      <button class="carrossel-botao botao-proximo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  
+  <main class="intro-bg">
+    <div class="intro-container">
+      <div class="intro-texto">
+        <h1>Glauber1907<span>.</span></h1>
+        <p>Em um mundo onde cada dia é uma batalha, conheça Fernando, um jovem determinado que enfrenta uma vida cheia de desafios. Ele luta diariamente para manter seus estudos e ajudar sua família. Contudo, a traição de seus colegas de faculdade o leva a perder tudo o que conquistou!<br><br>
+        Mas essa não é o fim. Quando tudo parece perdido, Fernando recebe uma oportunidade inesperada de mudar seu destino para sempre.</p>
+        <a href="https://illusia.com.br/story/koc-knight-of-chaos/koc-capitulo-01/" class="botao-capitulo">Primeiro capítulo</a>
+      </div>
+    </div>
+  </main>
+
+<!-- Seção de lançamento - agora com margem superior -->
+<main class="lancamento">
+  <h2 class="titulo-lancamento">Lançamento</h2>
+</main>
+  <main class="intro">
+      
+      <!-- Capítulo 1 -->
+      <div class="capitulo-card">
+        <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 1" class="capa-capitulo">
+        <div class="capitulo-info">
+          <span class="capitulo-numero">Capítulo 1</span>
+          <h3 class="capitulo-titulo">O Começo do Caos</h3>
+        </div>
+        <span class="capitulo-data">15/06/2024</span>
+      </div>
+
+      <!-- Capítulo 2 -->
+      <div class="capitulo-card">
+        <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 2" class="capa-capitulo">
+        <div class="capitulo-info">
+          <span class="capitulo-numero">Capítulo 2</span>
+          <h3 class="capitulo-titulo">A Traição</h3>
+        </div>
+        <span class="capitulo-data">22/06/2024</span>
+      </div>
+    </div>
+          <!-- Capítulo 1 -->
+          <div class="capitulo-card">
+            <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 1" class="capa-capitulo">
+            <div class="capitulo-info">
+              <span class="capitulo-numero">Capítulo 1</span>
+              <h3 class="capitulo-titulo">O Começo do Caos</h3>
+            </div>
+            <span class="capitulo-data">15/06/2024</span>
+          </div>
+    
+          <!-- Capítulo 2 -->
+          <div class="capitulo-card">
+            <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 2" class="capa-capitulo">
+            <div class="capitulo-info">
+              <span class="capitulo-numero">Capítulo 2</span>
+              <h3 class="capitulo-titulo">A Traição</h3>
+            </div>
+            <span class="capitulo-data">22/06/2024</span>
+          </div>
+        </div>
+              <!-- Capítulo 1 -->
+      <div class="capitulo-card">
+        <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 1" class="capa-capitulo">
+        <div class="capitulo-info">
+          <span class="capitulo-numero">Capítulo 1</span>
+          <h3 class="capitulo-titulo">O Começo do Caos</h3>
+        </div>
+        <span class="capitulo-data">15/06/2024</span>
+      </div>
+
+      <!-- Capítulo 2 -->
+      <div class="capitulo-card">
+        <img src="img/KnightOfChaosCapafix2 3.png" alt="Capa Capítulo 2" class="capa-capitulo">
+        <div class="capitulo-info">
+          <span class="capitulo-numero">Capítulo 2</span>
+          <h3 class="capitulo-titulo">A Traição</h3>
+        </div>
+        <span class="capitulo-data">22/06/2024</span>
+      </div>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+          <h2>Contato</h2>
+          <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+          <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+          <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+      </div>
+  
+      <div class="footer-column">
+          <h2>Informações</h2>
+          <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+          <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+          <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+      </div>
+  
+      <div class="footer-column">
+          <h2 class="h2-none">Siga-nos</h2>
+          <div class="social-icons">
+              <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+              <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+              <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+          </div>
+          <div class="logoss">
+              <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+          </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+
+
+    
+  <script src="menu.js"></script>
+  <script src="header-login.js"></script>
+
+  <script src="carousel.js"></script>
+  <script src="txt.js"></script>
+</body>
+</html>

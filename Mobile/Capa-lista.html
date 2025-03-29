@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="Header.css">
+  <link rel="stylesheet" href="Header-login.css">
+  <link rel="stylesheet" href="capa-kok.css">
+  <link rel="stylesheet" href="lista-kok.css">
+
+  <link rel="stylesheet" href="footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+<body>
+<header class="navbar" id="mainHeader">
+  <div class="navbar-container container">
+    <div class="menu-left">
+      <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items" id="menu-items">
+        <!-- Link de Login ATUALIZADO -->
+        <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+        <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+        <li><a href="./audiobook.html"><i class="fas fa-headphones"></i> Audiobook</a></li>
+      </ul>
+    </div>
+    <div class="login-logo">
+      <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65">
+    </div>
+  </div>
+</header>
+<!-- Linha horizontal branca -->
+<div class="login-modal" id="login-modal">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Fechar modal">&times;</button>
+    
+    <div class="login-tab">
+      <h2>Login</h2>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+        <!-- Link Cadastro - IMPORTANTE manter as classes -->
+        <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+      </form>
+    </div>
+    
+    <div class="register-tab" style="display:none">
+      <h2>Cadastro</h2>
+      <form class="register-form">
+        <div class="form-group">
+          <label for="new-username">Usuário:</label>
+          <input type="text" id="new-username" name="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">Senha:</label>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirme a Senha:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="login-btn">Cadastrar</button>
+        <!-- Link Login - IMPORTANTE manter as classes -->
+        <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-unificado">
+    <!-- Seção do Livro (Colunas) -->
+    <main class="livro-container">
+      <div class="livro-coluna-esquerda">
+        <div class="capa-livro">
+          <img src="img/img/KnightOfChaosCapafix2.png" alt="Capa do Livro" class="imagem-capa">
+          <div class="badge-destaque">Destaque</div>
+        </div>
+      </div>
+      
+      <div class="livro-coluna-direita">
+        <div class="livro-info-box livro-titulo">
+          <h1>Knight of Chaos</h1>
+          <div class="livro-subtitulo">Cavaleiro do caos</div>
+        </div>
+        
+        <div class="livro-info-box livro-metadados">
+          <div class="livro-stat">
+            <i class="fas fa-eye"></i>
+            <span>1.245 visualizações</span>
+          </div>
+          <div class="livro-stat">
+            <i class="fas fa-comment"></i>
+            <span>83 comentários</span>
+          </div>
+          <div class="livro-stat">
+            <i class="fas fa-user-edit"></i>
+            <span>Autor: Glauber1907</span>
+          </div>
+        </div>
+        
+        <div class="livro-info-box livro-descricao">
+          <h2>Sinopse</h2>
+          <p>Um jovem rapaz chamado Fernando tem uma vida extremamente difícil, lutando dia após dia para manter seus estudos para poder ter uma boa profissão e poder ajudar sua família, após ser tramado por seus colegas de faculdade ele perde tudo que demorou tanto para conquistar, ou pelo menos é o que ele pensava. Ele recebe uma grande chance de mudar seu destino ao ser apresentado a um mundo completamente diferente de tudo que ele já viu!</p>
+        </div>
+        
+        <div class="livro-info-box livro-acoes">
+          <button class="btn-ler"><i class="fas fa-book-open"></i> Ler Agora</button>
+          <button class="btn-favorito"><i class="far fa-bookmark"></i> Favoritar</button>
+          <button class="btn-compartilhar"><i class="fas fa-share-alt"></i> Compartilhar</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Seção de Capítulos e Comentários -->
+    <section class="capitulos-container">
+      <div class="capitulos-controle">
+        <div class="controle-botoes">
+          <button class="btn-capitulo ativo">Todos</button>
+          <button class="btn-capitulo">Novos</button>
+          <button class="btn-capitulo">Antigos</button>
+        </div>
+        
+        <div class="controle-pesquisa">
+          <div class="pesquisa-input">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Pesquisar capítulo...">
+          </div>
+        </div>
+      </div>
+    
+      <div class="lista-capitulos">
+        <div class="capitulo-header">
+          <span class="header-numero">#</span>
+          <span class="header-titulo">Título do Capítulo</span>
+          <span class="header-visualizacoes"><i class="fas fa-eye"></i></span>
+          <span class="header-data">Data</span>
+        </div>
+        
+        <div class="capitulo-item">
+          <span class="capitulo-numero">1</span>
+          <span class="capitulo-titulo">O Começo da Jornada</span>
+          <span class="capitulo-visualizacoes">1,245</span>
+          <span class="capitulo-data">15/05/2023</span>
+          <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="capitulo-item">
+            <span class="capitulo-numero">1</span>
+            <span class="capitulo-titulo">O Começo da Jornada</span>
+            <span class="capitulo-visualizacoes">1,245</span>
+            <span class="capitulo-data">15/05/2023</span>
+            <button class="capitulo-btn-ler">Ler <i class="fas fa-arrow-right"></i></button>
+          </div>
+        
+        <!-- Mais capítulos aqui... -->
+      </div>
+    
+      <div class="capitulos-paginacao">
+        <button class="paginacao-btn" disabled><i class="fas fa-chevron-left"></i></button>
+        <span class="paginacao-pagina">1 de 5</span>
+        <button class="paginacao-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    
+      <div class="comentarios-container">
+        <h3 class="comentarios-titulo"><i class="fas fa-comments"></i> Comentários (23)</h3>
+        
+        <div class="comentario-form">
+          <textarea placeholder="Adicione seu comentário..."></textarea>
+          <button class="btn-comentar">Comentar</button>
+        </div>
+        
+        <div class="comentario-lista">
+          <div class="comentario-item">
+            <div class="comentario-autor">
+              <img src="img/img/Chibi_Fernando.jpg" alt="Usuário" class="comentario-avatar">
+              <div class="comentario-info">
+                <span class="comentario-nome">João Silva</span>
+                <span class="comentario-data">2 dias atrás</span>
+              </div>
+            </div>
+            <div class="comentario-texto">
+              Adorei este capítulo! A construção do mundo está incrível. Mal posso esperar pelo próximo!
+            </div>
+            <div class="comentario-acoes">
+              <button class="btn-like"><i class="far fa-thumbs-up"></i> 12</button>
+              <button class="btn-reply"><i class="fas fa-reply"></i> Responder</button>
+            </div>
+          </div>
+          
+          <!-- Mais comentários aqui... -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+          <h2>Contato</h2>
+          <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+          <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+          <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+      </div>
+  
+      <div class="footer-column">
+          <h2>Informações</h2>
+          <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+          <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+          <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+      </div>
+  
+      <div class="footer-column">
+          <h2 class="h2-none">Siga-nos</h2>
+          <div class="social-icons">
+              <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+              <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+              <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+          </div>
+          <div class="logoss">
+              <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+          </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+
+
+    
+  <script src="menu.js"></script>
+  <script src="header-login.js"></script>
+
+  <script src="carousel.js"></script>
+  <script src="txt.js"></script>
+</body>
+</html>

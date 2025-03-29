@@ -1,0 +1,179 @@
+/* Toolbar do Leitor */
+.reader-toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    margin: 1rem auto;
+    background: rgb(53, 52, 52);
+    max-width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .toolbar-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+  
+  .toolbar-section:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -0.75rem;
+    height: 60%;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .tool-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .tool-btn.active {
+    background: #4a6fa5;
+    color: white;
+  }
+  
+  .font-size-display {
+    min-width: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+  
+  /* Tooltips */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+  }
+  
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Área de Leitura */
+  .reading-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .book-content {
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .chapter-title {
+    color: #4a6fa5;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .chapter-content {
+    text-align: justify;
+  }
+  
+  .chapter-content p {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Navegação */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-btn:hover {
+    background: #3a5a8f;
+    transform: translateY(-2px);
+  }
+  
+  .chapter-progress {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  /* Classes para temas */
+  .dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .book-content {
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .chapter-title {
+    color: #6d9ee6;
+  }
+  
+  .sepia-mode {
+    background-color: #f4ecd8;
+    color: #5b4636;
+  }
+  
+  /* Classes para largura */
+  .narrow-width .reading-container {
+    max-width: 600px;
+  }
+  
+  .wide-width .reading-container {
+    max-width: 1000px;
+  }

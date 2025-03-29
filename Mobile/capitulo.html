@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="Header.css">
+  <link rel="stylesheet" href="Header-login.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="reader.css">
+  <link rel="stylesheet" href="comentario-capitulo.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+<body>
+<header class="navbar" id="mainHeader">
+  <div class="navbar-container container">
+    <div class="menu-left">
+      <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items" id="menu-items">
+        <!-- Link de Login ATUALIZADO -->
+        <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+        <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+        <li><a href="./audiobook.html"><i class="fas fa-headphones"></i> Audiobook</a></li>
+      </ul>
+    </div>
+    <div class="login-logo">
+      <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65">
+    </div>
+  </div>
+</header>
+<!-- Linha horizontal branca -->
+<div class="login-modal" id="login-modal">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Fechar modal">&times;</button>
+    
+    <div class="login-tab">
+      <h2>Login</h2>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+        <!-- Link Cadastro - IMPORTANTE manter as classes -->
+        <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+      </form>
+    </div>
+    
+    <div class="register-tab" style="display:none">
+      <h2>Cadastro</h2>
+      <form class="register-form">
+        <div class="form-group">
+          <label for="new-username">Usuário:</label>
+          <input type="text" id="new-username" name="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">Senha:</label>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirme a Senha:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="login-btn">Cadastrar</button>
+        <!-- Link Login - IMPORTANTE manter as classes -->
+        <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="reader-toolbar">
+  <div class="toolbar-section">
+    <div class="tooltip">
+      <button class="tool-btn" id="font-decrease" aria-label="Diminuir fonte">
+        <i class="fas fa-font"></i><span class="icon-text">-</span>
+      </button>
+      <span class="tooltip-text">Diminuir fonte</span>
+    </div>
+    
+    <span class="font-size-display" id="font-size">16px</span>
+    
+    <div class="tooltip">
+      <button class="tool-btn" id="font-increase" aria-label="Aumentar fonte">
+        <i class="fas fa-font"></i><span class="icon-text">+</span>
+      </button>
+      <span class="tooltip-text">Aumentar fonte</span>
+    </div>
+  </div>
+  
+  <div class="toolbar-section">
+    <div class="tooltip">
+      <button class="tool-btn theme-btn" id="light-mode" aria-label="Modo claro">
+        <i class="fas fa-sun"></i>
+      </button>
+      <span class="tooltip-text">Modo claro</span>
+    </div>
+    
+    <div class="tooltip">
+      <button class="tool-btn theme-btn" id="dark-mode" aria-label="Modo escuro">
+        <i class="fas fa-moon"></i>
+      </button>
+      <span class="tooltip-text">Modo escuro</span>
+    </div>
+    
+    <div class="tooltip">
+      <button class="tool-btn theme-btn" id="sepia-mode" aria-label="Modo sépia">
+        <i class="fas fa-book-open"></i>
+      </button>
+      <span class="tooltip-text">Modo sépia</span>
+    </div>
+  </div>
+  
+  <div class="toolbar-section">
+    <div class="tooltip">
+      <button class="tool-btn width-btn" id="narrow" aria-label="Coluna estreita">
+        <i class="fas fa-columns"></i>
+      </button>
+      <span class="tooltip-text">Coluna estreita</span>
+    </div>
+    
+    <div class="tooltip">
+      <button class="tool-btn width-btn active" id="medium" aria-label="Largura média">
+        <i class="fas fa-text-width"></i>
+      </button>
+      <span class="tooltip-text">Largura média</span>
+    </div>
+    
+    <div class="tooltip">
+      <button class="tool-btn width-btn" id="wide" aria-label="Largura ampla">
+        <i class="fas fa-arrows-alt-h"></i>
+      </button>
+      <span class="tooltip-text">Largura ampla</span>
+    </div>
+  </div>
+</div>
+
+<!-- Área de Leitura -->
+<div class="reading-container">
+  <article class="book-content" id="book-content">
+    <h1 class="chapter-title">Capítulo 1 - Viver e sofrer</h1>
+    
+    <div class="chapter-content">
+      <p>Em um certo ambiente acadêmico uma aula estava sendo realizada, aparentemente algo relacionado às exatas.</p>
+
+      <p>Um professor, baixinho e com bigode, escrevia números e caracteres de forma incessante na longa lousa branca, sem vontade alguma de parar. Em contrapartida, os alunos pareciam desanimados e cansados.</p>
+
+      <p>Tec… Tec… Tec…</p>
+
+      <p>A sala de aula estava em completo silêncio, apenas os sons do canetão eram ouvidos.</p>
+
+      <p>Um aluno, farto da situação, de repente falou: "Professor Leon! É realmente necessário escrever tanto? Meus dedos já estão calejados devido às suas aulas. Seria muito mais fácil mandar toda essa matéria em PDF, nos economizaria muito tempo."</p>
+
+      <p>O professor de repente parou a caneta e se virou lentamente para olhar o rapaz.</p>
+
+      <p>"A melhor maneira de aprender algo é primeiramente gravar isso profundamente em sua mente. Ao copiar manualmente a matéria, ela fica guardada mais facilmente na cabeça. Hoje, nas duas primeiras aulas, focaremos apenas em transcrever o conteúdo. Depois disso, irei explicar e responder quaisquer dúvidas que vocês tenham." explicou de maneira didática.</p>
+
+      <p>A sala, outrora silenciosa, foi preenchida com sons de protestos.</p>
+
+      <p>"Mas, professor, é necessário variar um pouco. Sinto que meus dedos vão cair de tanto escrever. Você por acaso quer nos fazer desistir do curso?" Outro aluno, magro e alto, perguntou de repente.</p>
+
+      <p>Suspiro!</p>
+
+      <p>"Tudo bem, eu planejava atribuir esse trabalho para a próxima aula. Já que estão tão ansiosos, vamos começar a organizar hoje. Se dividam em onze grupos de até seis pessoas, com um mínimo de cinco por grupo. O trabalho consiste em elaborar um projeto de tema livre de acordo com o assunto da matéria. Mas lembrem-se, quero um relatório escrito com a descrição detalhada do projeto e com todos os cálculos seguindo o conteúdo das últimas aulas. Vocês terão um mês. O prazo é um pouco apertado, mas se as tarefas para cada membro forem atribuídas corretamente, vocês conseguirão fazer facilmente."</p>
+
+      <p>"Ai, sim, professor!!"</p>
+
+      <p>Os alunos comemoraram, enquanto se levantavam para juntar suas cadeiras e se organizar.</p>
+
+      <p>"Nunca pensei que ficaria feliz em ter que fazer um trabalho da faculdade… Acho que apenas as aulas irritantes do velho Leon conseguem causar isso na gente." comentou, de forma aborrecida, uma bela garota loira, com curvas acentuadas e seios firmes.</p>
+
+      <p>Ela usava uma camisa folgada, que mostrava levemente o sutiã pelas laterais e costas, e uma calça legging justa ao corpo. Pareciam ser roupas do tipo que se usa em uma academia.</p>
+
+      <p>"Bem, veja o lado bom, pelo menos não precisamos ficar escrevendo por horas de novo, Carla." Um rapaz mulato disse ao lado.</p>
+
+      <p>"Diga por si mesmo. Esse trabalho vai ser um porre, só de pensar na quantidade de cálculos que vamos ter que fazer já me dá náuseas. Eu nem lembro do conteúdo das últimas aulas." respondeu Carla.</p>
+
+      <p>"Se você focasse mais nas aulas e menos no Hugo, ainda lembraria do conteúdo! Soube que se 'empolgou' muito nesse último sábado." Uma garota do grupo falou de forma brincalhona.</p>
+
+      <p>"É melhor você fechar essa boca, se não quiser que eu mesma a feche!" A loira respondeu com uma falsa irritação.</p>
+
+      <p>"Hahahaaha."</p>
+
+      <p>O grupo riu e se divertiu, enquanto terminavam de arrumar suas coisas.</p>
+
+      <p>De repente, um jovem, que parecia ter 18 ou 19 anos, se levantou de sua cadeira e caminhou lentamente em direção ao grupo.</p>
+
+      <p>O rapaz tinha cerca de 1,76 de altura, sua aparência não era bonita e nem feia. A cor de sua pele era extremamente pálida, quase como se estivesse doente. Seus olhos eram castanhos escuros e seu cabelo preto e curto, um pouco bagunçado. Suas roupas pareciam muito modestas e maltratadas. Ele parecia ser o tipo que seria facilmente ignorado em meio a uma multidão, quase invisível.</p>
+
+      <p>Thiago, o rapaz mulato, percebeu rapidamente o jovem e falou ao grupo:</p>
+
+      <p>"Tsc… Olha quem tá vindo aí, aquele nerd estranho."</p>
+
+      <p>"Esse manezão. O que será que ele quer?" Carla questionou de forma fria.</p>
+
+      <p>O grupo notou o rapaz caminhando em direção a eles e cessaram rapidamente a conversa, lançando olhares levemente hostis e de zombaria. Era um comportamento em relação aos excluídos.</p>
+
+      <p>O rapaz parou em frente ao grupo e ficou em pé de forma estática. Parecia estar extremamente hesitante e desconfortável. Suas mãos estavam trêmulas e suavam frio.</p>
+
+      <p>"Err… Eu… Eu…"</p>
+
+      <p>Ele abriu a boca como se quisesse dizer algo, mas acabou não dizendo nada e apenas continuou a gaguejar.</p>
+
+      <p>Nesse momento, Carla perdeu a paciência e falou:</p>
+
+      <p>"Desembucha de uma vez, nerdão. O que caralhos você quer?"</p>
+
+      <p>O rapaz ficou atônito ao ser repreendido de forma tão agressiva pela garota loira. Ele parecia assustado e envergonhado, mas tentou ao máximo se acalmar e organizar seus pensamentos.</p>
+
+      <p>"Bem… E-eu reparei que vocês estão em cinco e o professor mencionou que os grupos poderiam ter até seis. Estou sem grupo, então pensei que… talvez pudesse me juntar a vocês." O jovem pálido disse de forma pausada e meio gaguejando, parecia estar fazendo o seu melhor apenas para dizer isso.</p>
+
+      <p>O que ele falou surpreendeu o grupo.</p>
+
+      <p>"Você quer se juntar a nós? Essa é boa." Thiago ironizou.</p>
+
+      <p>Os outros também pareciam ter expressões zombeteiras e alguns até riram baixinho.</p>
+
+      <p>O rapaz ficou parado em pé sem saber o que fazer.</p>
+
+      <p>"Lembro que você é o cara que não fala muito, mas não sei o seu nome, como você se chama?" Carla perguntou com um meio sorriso. Quem não a conhecia certamente acharia esse sorriso extremamente encantador e ficaria fascinado, mas os amigos próximos sabiam que era um sorriso de puro escárnio.</p>
+
+      <p>O jovem ficou hipnotizado devido à mudança de atitude dessa bela garota em relação a ele, mas rapidamente se recompôs, afinal, precisava muito entrar em um grupo caso quisesse concluir a tarefa dada.</p>
+
+      <p>"Eu… eu me chamo... F-Fernando."</p>
+
+      <p>"Oh, então esse é o seu nome." Carla falou, como se estivesse interessada.</p>
+
+      <p>"Então, Fernando, como você pode ver, nosso grupo de cinco é muito unido. Seria estranho permitir alguém de fora, como você, entrar assim do nada, mas acho que posso abrir uma exceção." A garota loira falou de forma sucinta e calma, o que surpreendeu o rapaz pálido e, até mesmo, seus próprios amigos.</p>
+
+      <p>"Porém…" continuou. "Preciso que faça algo. Se quer se juntar a nós, terá que fazer algum esforço, afinal, nada é de graça nessa vida. Todos os cálculos serão entregues para você fazer e nós nos encarregaremos da parte escrita e da maquete. O que me diz?" Carla disse, sorrindo de orelha a orelha, porém o sarcasmo era claro em sua entonação.</p>
+
+      <p>Era óbvio que ela planejava se aproveitar dele. Os cálculos são a parte mais difícil e correspondia a 80% do projeto. Os amigos rapidamente entenderam sua intenção, ela queria obrigá-lo a fazer todo o trabalho pesado para eles!</p>
+
+      <p>A oferta da garota loira jogou um balde de água fria no rapaz.</p>
+
+      <p>"Isso… Eu…" O jovem balbuciou sem saber o que dizer. Queria recusar, pois fazer tantos cálculos sozinho seria extremamente desafiador, mesmo para ele que era alguém extremamente inteligente e focado.</p>
+
+      <p>"O quê? Você tem algum problema com isso?" Carla perguntou, ainda sorrindo.</p>
+
+      <p>"Eu… acho um pouco… injusto." Apesar da extrema timidez, o rapaz se esforçou para dizer isso. Se ele concordasse, a carga que teria seria imensa pelos próximos meses, mal teria tempo para estudar para as outras matérias.</p>
+
+      <p>"Oh? Então você acha injusto." O sorriso de Carla vagarosamente se desfez, suas sobrancelhas se juntaram em sinal de descontentamento e ela lançou um olhar arrogante em direção a Fernando.</p>
+
+      <p>O jovem tímido sentiu seu coração 'gelar' com essa nova mudança de atitude da loira.</p>
+
+      <p>"Se acha injusto, então é melhor você se foder com essa sua cara de nerd nojento para longe daqui!! Seu escroto. Alguém como eu te deu uma oportunidade e você recusa? Quem você pensa que é? Seu lixo de baixa classe!!" A garota insultou, como se fosse muito superior a ele e pudesse pisá-lo como um mero inseto. Ela finalmente mostrou quem era de verdade!</p>
+
+      <p>Fernando ficou muito abalado, ele já estava acostumado a ser menosprezado pelos outros devido a sua personalidade tímida e jeito antissocial, mas nunca foi insultado dessa forma.</p>
+
+      <p>Ele estava com medo e, ao mesmo tempo, bravo. Mas o que ele poderia fazer? Não tinha amigos ali e nem sequer coragem para retrucar.</p>
+
+      <p>A cena chamou a atenção de grupos próximos, que começaram a comentar sobre.</p>
+
+      <p>O professor Leon, que estava organizando suas pastas, percebeu a comoção. Logo identificou a origem da confusão e se aproximou.</p>
+
+      <p>"Afinal, o que está acontecendo aqui!?"</p>
+
+      <p>"Nada, professor. Apenas recusamos esse cara de entrar em nosso grupo, mas ele tentou nos ameaçar e disse que faria coisas vulgares comigo. Então acabei ficando um pouco nervosa… Estou preocupada de que ele faça algo comigo." Carla afirmou de forma desamparada, como se fosse uma pobre vítima à beira das lágrimas, sua atuação foi realmente muito boa e convincente. Os alunos dos outros grupos que já tinham alguma aversão ao jovem esquisito imediatamente acreditaram nela.</p>
+
+      <p>"Isso é verdade rapaz?" O professor questionou. Até mesmo ele acreditou nela, mas preferiu ser justo e primeiro ouvir as duas partes.</p>
+
+      <p>"Não! Eu estava… apenas…" Fernando estava em choque, não estava acostumado a ser o foco da atenção de tantas pessoas.</p>
+
+      <p>A sala era bem espaçosa e tinha em torno de sessenta alunos. Para piorar, ele era o foco central numa situação tão vexaminosa, sendo caluniado de tal forma.</p>
+
+      <p>O jovem pálido não sabia o que dizer ou como reagir. Estava enfurecido com essa mulher dissimulada a sua frente, mas alguém acreditaria nele mesmo se dissesse a verdade? Que essa garota linda era, na verdade, tão escorregadia quanto suas curvas delineadas e queria obrigá-lo a fazer a maior parte do projeto sozinho para ela?</p>
+
+      <p>As pessoas já estavam o olhando com um olhar de julgamento e nojo, claramente convencidas de sua culpa.</p>
+
+      <p>"É verdade, professor Leon! Esse moleque folgado chegou exigindo fazer parte do nosso grupo. Normalmente não nos importaríamos em acolhê-lo, mas devido à sua atitude, recusamos. Então ele falou muitas barbáries para Carla e nos ameaçou!" Thiago acusou e o restante do grupo concordou, parecia divertido ferrar um nerd pobretão como esse.</p>
+
+      <p>"Jovem, é melhor você se explicar. Nesta instituição não aceitamos esse tipo de comportamento!!" O professor Leon o advertiu.</p>
+
+      <p>Nesse momento, Fernando se desesperou, pois não poderia ser expulso. Ele estudou tanto para ganhar uma bolsa nesta Universidade renomada porque não tinha condições financeiras para pagar seus estudos. Se ele fosse expulso, estaria acabado!</p>
+
+      <p>"Não! Eu apenas queria um grupo… Realmente não fiz nada!" Nesse momento de desespero, criou coragem para falar e praticamente não gaguejou.</p>
+
+      <p>Contudo, era tarde. As pessoas já estavam convencidas pelo ato de Carla e seus amigos, afinal, eram cinco e ele apenas um. Somando o fato do jovem pálido ser considerado esquisito na classe, fez com que seus colegas tivessem uma opinião formada e não a mudariam independente do que o mesmo dissesse nesse momento.</p>
+
+      <p>"Isso é o que veremos, rapaz. Por hora, como professor, estou aplicando uma penalidade disciplinar e pode se considerar suspenso. Dentro de alguns dias você receberá uma carta informando uma data para prestar esclarecimentos do ocorrido à reitoria!" Leon demonstrou severidade em sua voz, claramente também estava convencido. Em sua opinião, o fato do rapaz ter hesitado em se explicar pareceu confirmar a acusação.</p>
+
+      <p>Após pegar os dados de matrícula de Fernando, o professor Leon o convidou a se retirar da sala. Acompanhado de um segurança, o jovem foi conduzido até o lado de fora do campus.</p>
+
+      <p>…</p>
+
+      <p>Fernando estava em lágrimas, parado em frente a Universidade.</p>
+
+      <p>Ainda chorando e desamparado, seguiu em direção até sua casa que ficava a trinta minutos a pé. Ele não tinha dinheiro para transporte, então sempre caminhava na ida e na volta.</p>
+
+      <p>Ele veio de uma família pobre que não tinha condições de custear seus estudos. Por isso, estudou freneticamente, e com muito esforço, conseguiu ganhar uma das poucas bolsas de estudo nessa renomada Universidade particular.</p>
+
+      <p>Essa era uma Universidade conhecida e conceituada em todo o país, onde as elites ricas se reuniam. Apesar de ter ganhado a Bolsa de Estudos, isso só significava que não teria que pagar a matrícula, as mensalidades e materiais didáticos, o restante dos custos seriam por sua própria conta.</p>
+
+      <p>Fernando veio de uma pequena cidade chamada Lourenços, em outro estado, um ano antes de ganhar a Bolsa de Estudos e já havia feito um planejamento meticuloso. Juntou dinheiro suficiente para seus gastos iniciais e viajou para São Paulo, uma das cidades mais populosas do mundo, tudo na esperança de mudar sua vida.</p>
+
+      <p>Após grandes dificuldades, conseguiu achar um pequeno apartamento a trinta minutos do campus a um preço muito baixo. Devido à má localização e o fato de ser bastante mofado, o valor foi bem acessível para ele.</p>
+
+      <p>Depois disso, conseguiu um trabalho de faxineiro noturno em um restaurante.</p>
+
+      <p>Com tudo isso, mal conseguia manter sua alimentação e outras necessidades básicas, bem como pagar o aluguel do pequeno apartamento cheio de mofo. Ele estava dando tudo de si, mas todo seu planejamento e esforço foram esmagados em um único dia.</p>
+
+      <p>"Por que isso tinha que acontecer comigo? O que fiz de errado? Eu só queria estudar em paz…" Fernando estava sentado em sua cama, lágrimas desciam como uma cachoeira. Ele estava relembrando os acontecimentos do dia.</p>
+
+      <p>De repente, ao se lembrar da loira voluptuosa e seus amigos que armaram para ele, uma fúria que nunca sentiu antes em sua vida fez seu sangue ferver.</p>
+
+      <p>"Aqueles desgraçados! Eles me trataram como um idiota e destruíram minha vida apenas por diversão, como se eu não fosse nada… Um dia… Um dia certamente me vingarei!!" O jovem jurou para si mesmo.</p>
+
+      <p>"Isso tudo aconteceu porque eu fui fraco... Fui um covarde... Se eu não fosse um bobão que deixa as pessoas se aproveitarem de mim, nada disso teria acontecido." falou para si mesmo, apertando seus punhos fortemente enquanto as lágrimas escorriam.</p>
+
+      <p>Mais do que aqueles ricos esnobes, Fernando odiou a si mesmo e suas fraquezas. Se ele fosse diferente, alguém mais decisivo e confiante, nada disso teria acontecido.</p>
+
+      <p>"Um dia irei mudar meu destino com minhas próprias mãos. Estou farto de ser um ninguém que pode ser pisado a qualquer momento!!" Uma luz afiada e decisiva brilhou em seus olhos úmidos.</p>
+
+      <p>Depois de algum tempo, após se acalmar, foi até a micro cozinha preparar algo para comer antes de ir descansar. Ele tinha que trabalhar de madrugada, afinal, apesar das coisas ruins que aconteceram nesse dia, ainda precisava pagar as contas.</p>
+
+      <p>Era por volta das 18:00h quando terminou de comer e se banhar. Então deitou diretamente na cama, pronto para dormir. Ele precisava acordar às 00:00h para ir ao seu trabalho de faxineiro noturno em um restaurante 24h na região próxima.</p>
+
+      <p>"Amanhã é um novo dia. Não vou deixar o que aconteceu hoje me abalar, ainda há esperança!" pensou consigo mesmo.</p>
+
+      <p>Enquanto se perdia em seus pensamentos de automotivação, começou vagarosamente a adormecer. Pouco antes de dormir completamente, sentiu uma sensação estranha em torno de seu corpo, como se estivesse envolto em eletricidade.</p>
+
+      <p>Essa sensação, estranha e desconhecida, veio de forma muito repentina e abraçou seu corpo completamente em poucos instantes. Fernando entrou em pânico com isso, o medo enchendo cada fibra de seu corpo.</p>
+
+      <p>Ele tentou se levantar e abrir os olhos desesperadamente, mas apesar da luta frenética, tudo que conseguiu foi uma abertura semicerrada entre seus cílios. O que vislumbrou o assustou tremendamente.</p>
+
+      <p>Havia uma série de luzes divinas de várias cores, incluindo cores que nunca havia visto antes. Elas estavam em torno de todo espaço ao seu redor. Era como se esses flashes coloridos fossem líquidos, envolvendo cada parte de seu corpo lentamente.</p>
+
+      <p>"O que está acontecendo? O que é isso? Será que eu estou morrendo?" imaginou, profundamente assustado. Desgosto o preencheu por não ter sequer a chance de realizar seus próprios juramentos.</p>
+
+      <p>Antes que pudesse pensar mais a respeito dessa situação bizarra ou mesmo lamentar um pouco mais, sua visão subitamente escureceu e sua consciência lentamente se esvaiu.</p>
+    </div>
+  </article>
+</div>
+
+<!-- Navegação entre Capítulos -->
+<div class="chapter-nav">
+  <button class="nav-btn" id="prev-chapter">
+    <i class="fas fa-arrow-left"></i>
+    <span>Capítulo Anterior</span>
+  </button>
+  
+  <div class="chapter-progress">
+    <span class="current-chapter">Capítulo 1</span>
+    <span class="progress-separator">de</span>
+    <span class="total-chapters">24</span>
+  </div>
+  
+  <button class="nav-btn" id="next-chapter">
+    <span>Próximo Capítulo</span>
+    <i class="fas fa-arrow-right"></i>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Sistema de Comentários -->
+<div class="comments-section">
+  <h2 class="comments-title">Comentários</h2>
+  
+  <!-- Formulário de Comentário -->
+  <div class="comment-form">
+    <h3>Deixe seu comentário</h3>
+    <form id="comment-form">
+      <div class="form-group">
+        <label for="comment-name">Nome:</label>
+        <input type="text" id="comment-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-text">Comentário:</label>
+        <textarea id="comment-text" name="comment" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar Comentário</button>
+    </form>
+  </div>
+  
+  <!-- Lista de Comentários -->
+  <div class="comments-list" id="comments-list">
+    <!-- Comentários serão exibidos aqui -->
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+        <h2>Contato</h2>
+        <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+        <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+        <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+    </div>
+
+    <div class="footer-column">
+        <h2>Informações</h2>
+        <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+        <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+        <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+    </div>
+
+    <div class="footer-column">
+        <h2 class="h2-none">Siga-nos</h2>
+        <div class="social-icons">
+            <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+            <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+            <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+        </div>
+        <div class="logoss">
+            <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="comentario-capitulo.js"></script>
+<script src="reader.js"></script>
+<script src="menu.js"></script>
+<script src="header-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Gerenciar Livros</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Tela de Login -->
+        <div id="admin-login">
+            <div class="login-box">
+                <h1><i class="fas fa-lock"></i> Área Restrita</h1>
+                
+                <!-- Campo de E-mail Melhorado -->
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="admin-email" placeholder="admin@exemplo.com" required>
+                </div>
+                
+                <!-- Campo de Senha -->
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <input type="password" id="admin-password" placeholder="Digite a senha" required>
+                </div>
+                
+                <button id="login-btn" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Acessar
+                </button>
+                
+                <p id="login-message"></p>
+            </div>
+        </div>
+
+        <!-- Painel Administrativo -->
+        <div id="admin-panel" class="hidden">
+            <header>
+                <h2><i class="fas fa-book"></i> Gerenciamento de Conteúdo</h2>
+                <button id="logout-btn" class="btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </header>
+
+            <!-- Seção de Livros -->
+            <div class="livros-container">
+                <h3><i class="fas fa-book-open"></i> Gerenciar Livros</h3>
+                
+                <form id="form-livro">
+                    <div class="form-group">
+                        <input type="text" id="titulo" placeholder="Título do livro" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="autor" placeholder="Autor" required>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i> Adicionar Livro
+                    </button>
+                </form>
+                
+                <div id="listaLivros" class="livros-grid"></div>
+            </div>
+
+            <!-- Seção de Capítulos -->
+            <div class="form-container">
+                <h3><i class="fas fa-file-alt"></i> Publicar Capítulos</h3>
+                
+                <div class="form-group">
+                    <label for="book-title"><i class="fas fa-book-open"></i> Livro:</label>
+                    <input type="text" id="book-title" placeholder="Título do livro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chapter-title"><i class="fas fa-heading"></i> Capítulo:</label>
+                    <input type="text" id="chapter-title" placeholder="Título do capítulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chapter-content"><i class="fas fa-align-left"></i> Conteúdo:</label>
+                    <textarea id="chapter-content" rows="15" required></textarea>
+                </div>
+
+                <div class="actions">
+                    <button id="save-btn" class="btn-primary">
+                        <i class="fas fa-save"></i> Publicar Capítulo
+                    </button>
+                    <p id="status-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDTn-Qf0T2POeVmmXNXKbJ1YzK0dS-LxqQ",
+        authDomain: "koc-glauber1907.firebaseapp.com",
+        projectId: "koc-glauber1907",
+        storageBucket: "koc-glauber1907.appspot.com",
+        messagingSenderId: "420407202700",
+        appId: "1:420407202700:web:3e3862d28a5888bdf1fca9"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    <script src="admin.js"></script>
+</body>
+</html>

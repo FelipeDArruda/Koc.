@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - KOC-ARR</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="icon">☰</span>
+            <span class="text">KOC-ARR</span>
+        </div>
+        <ul>
+            <li onclick="loadPage('home')">
+                <span class="icon">📊</span>
+                <span class="text">Dashboard</span>
+            </li>
+            <li onclick="loadPage('catalog')">
+                <span class="icon">📚</span>
+                <span class="text">Catálogo</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Área Principal -->
+    <div class="main-content" id="content">
+        <!-- Conteúdo será carregado dinamicamente aqui -->
+    </div>
+
+    <!-- Templates -->
+    <div id="templates" style="display:none;">
+        <!-- Dashboard -->
+        <div id="home-template">
+            <div class="dashboard">
+                <h1>📊 Dashboard</h1>
+                <div class="dashboard-grid">
+                    <div class="chart-container">
+                        <h3>Visualizações Mensais</h3>
+                        <canvas id="monthly-chart" height="300"></canvas> <!-- Elemento canvas adicionado -->
+                    </div>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3>Livros Cadastrados</h3>
+                            <div class="value" id="total-books">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Capítulos Publicados</h3>
+                            <div class="value" id="total-chapters">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catálogo de Livros -->
+        <div id="catalog-template">
+            <div class="catalog-header">
+                <h1>📚 Catálogo de Livros</h1>
+                <button class="btn btn-primary" onclick="showAddBookForm()">
+                    ＋ Adicionar Livro
+                </button>
+            </div>
+            
+            <div class="books-container" id="books-container">
+                <div class="empty-state">
+                    <p>Nenhum livro cadastrado ainda.</p>
+                    <button class="btn btn-primary" onclick="showAddBookForm()">
+                        Adicionar Primeiro Livro
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulário de Livro -->
+        <div id="add-book-template">
+            <div class="form-header">
+                <h1>
+                    <span class="icon">📖</span>
+                    <span id="form-title">Novo Livro</span>
+                </h1>
+                <button class="btn btn-back" onclick="loadPage('catalog')">
+                    ← Voltar
+                </button>
+            </div>
+            
+            <div class="form-container">
+                <form id="book-form" class="book-form">
+                    <!-- PARTE SUPERIOR MODIFICADA -->
+                    <div class="form-columns">
+                        <div class="form-left">
+                            <div class="form-group">
+                                <label for="book-title">Título do Livro *</label>
+                                <input type="text" id="book-title" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="book-author">Autor *</label>
+                                <input type="text" id="book-author" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="book-synopsis">Sinopse *</label>
+                                <textarea id="book-synopsis" class="form-control" rows="4" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-right">
+                            <div class="form-group">
+                                <label for="book-cover">URL da Capa *</label>
+                                <input type="url" id="book-cover" class="form-control" placeholder="https://exemplo.com/capa.jpg" required>
+                                <div class="cover-preview" id="cover-preview">
+                                    <span>Preview da capa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- SEÇÃO DE CAPÍTULOS (MANTIDA EXATAMENTE COMO ESTAVA) -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <h2>
+                                <span class="icon">📑</span>
+                                Capítulos (Mínimo 5)
+                            </h2>
+                            <button type="button" class="btn btn-secondary" onclick="addChapterField()">
+                                ＋ Adicionar Capítulo
+                            </button>
+                        </div>
+                        <div id="chapters-list" class="chapters-list">
+                            <div class="chapter-item">
+                                <div class="chapter-header">
+                                    <h3>Capítulo 1</h3>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="removeChapter(this)">
+                                        Remover
+                                    </button>
+                                </div>
+                                <input type="text" placeholder="Título do capítulo" class="chapter-title" required>
+                                <textarea placeholder="Conteúdo do capítulo..." rows="3" class="chapter-content" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-cancel" onclick="loadPage('catalog')">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Salvar Livro
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <!-- Scripts (IMPORTANTE: Chart.js deve vir antes do script.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

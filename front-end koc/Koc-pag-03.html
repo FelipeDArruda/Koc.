@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="css/Header.css">
+  <link rel="stylesheet" href="css/Header-login.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/reader.css">
+  <link rel="stylesheet" href="css/comentario-capitulo.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+<body>
+<header class="navbar" id="mainHeader">
+  <div class="navbar-container container">
+    <div class="menu-left">
+      <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items" id="menu-items">
+        <!-- Link de Login ATUALIZADO -->
+        <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+        <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+        <li><a href="./audiobook.html"><i class="fas fa-headphones"></i> Audiobook</a></li>
+      </ul>
+    </div>
+    <div class="login-logo">
+      <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65">
+    </div>
+  </div>
+</header>
+<!-- Linha horizontal branca -->
+<div class="login-modal" id="login-modal">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Fechar modal">&times;</button>
+    
+    <div class="login-tab">
+      <h2>Login</h2>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+        <!-- Link Cadastro - IMPORTANTE manter as classes -->
+        <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+      </form>
+    </div>
+    
+    <div class="register-tab" style="display:none">
+      <h2>Cadastro</h2>
+      <form class="register-form">
+        <div class="form-group">
+          <label for="new-username">Usuário:</label>
+          <input type="text" id="new-username" name="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">Senha:</label>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirme a Senha:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="login-btn">Cadastrar</button>
+        <!-- Link Login - IMPORTANTE manter as classes -->
+        <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Barra de Navegação Simplificada -->
+<div class="chapter-navigation">
+  <button id="prev-chapter" class="nav-button">⏪ Anterior</button>
+
+  <div class="settings-container">
+      <button id="settings-toggle" class="settings-btn">⚙️</button>
+      <div class="settings-menu" id="settings-menu">
+          
+          <!-- 🔹 Tamanho do Texto -->
+          <div class="settings-group">
+              <h4>Tamanho do Texto</h4>
+              <button class="settings-option" id="font-decrease" data-action="decrease-font">
+                  <i class="fas fa-minus"></i> <span>Diminuir Fonte</span>
+              </button>
+              <button class="settings-option" id="font-increase" data-action="increase-font">
+                  <i class="fas fa-plus"></i> <span>Aumentar Fonte</span>
+              </button>
+          </div>
+
+          <!-- 🔹 Tema -->
+          <div class="settings-group">
+              <h4>Tema</h4>
+              <button class="settings-option theme-btn" data-theme="light">
+                  <i class="fas fa-sun"></i> <span>Modo Claro</span>
+              </button>
+              <button class="settings-option theme-btn" data-theme="dark">
+                  <i class="fas fa-moon"></i> <span>Modo Escuro</span>
+              </button>
+              <button class="settings-option theme-btn" data-theme="sepia">
+                  <i class="fas fa-book-open"></i> <span>Modo Sépia</span>
+              </button>
+          </div>
+
+          <!-- 🔹 Largura -->
+          <div class="settings-group">
+              <h4>Largura</h4>
+              <button class="settings-option width-btn" data-width="medium">
+                  <i class="fas fa-text-width"></i> <span>Padrão</span>
+              </button>
+              <button class="settings-option width-btn" data-width="wide">
+                  <i class="fas fa-arrows-alt-h"></i> <span>Ampliada</span>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <button id="next-chapter" class="nav-button">Próximo ⏩</button>
+</div>
+
+
+<!-- Área de Leitura -->
+<div class="reading-container">
+  <article class="book-content" id="book-content">
+    <h1 class="chapter-title">Capítulo 1 - Viver e sofrer</h1>
+    
+    <div class="chapter-content">
+      <p>Em um certo ambiente acadêmico uma aula estava sendo realizada, aparentemente algo relacionado às exatas.</p>
+
+      <p>Um professor, baixinho e com bigode, escrevia números e caracteres de forma incessante na longa lousa branca, sem vontade alguma de parar. Em contrapartida, os alunos pareciam desanimados e cansados.</p>
+
+      <p>Tec… Tec… Tec…</p>
+
+      <p>A sala de aula estava em completo silêncio, apenas os sons do canetão eram ouvidos.</p>
+
+      <p>Um aluno, farto da situação, de repente falou: "Professor Leon! É realmente necessário escrever tanto? Meus dedos já estão calejados devido às suas aulas. Seria muito mais fácil mandar toda essa matéria em PDF, nos economizaria muito tempo."</p>
+
+      <p>O professor de repente parou a caneta e se virou lentamente para olhar o rapaz.</p>
+
+      <p>"A melhor maneira de aprender algo é primeiramente gravar isso profundamente em sua mente. Ao copiar manualmente a matéria, ela fica guardada mais facilmente na cabeça. Hoje, nas duas primeiras aulas, focaremos apenas em transcrever o conteúdo. Depois disso, irei explicar e responder quaisquer dúvidas que vocês tenham." explicou de maneira didática.</p>
+
+      <p>A sala, outrora silenciosa, foi preenchida com sons de protestos.</p>
+
+      <p>"Mas, professor, é necessário variar um pouco. Sinto que meus dedos vão cair de tanto escrever. Você por acaso quer nos fazer desistir do curso?" Outro aluno, magro e alto, perguntou de repente.</p>
+
+      <p>Suspiro!</p>
+
+      <p>"Tudo bem, eu planejava atribuir esse trabalho para a próxima aula. Já que estão tão ansiosos, vamos começar a organizar hoje. Se dividam em onze grupos de até seis pessoas, com um mínimo de cinco por grupo. O trabalho consiste em elaborar um projeto de tema livre de acordo com o assunto da matéria. Mas lembrem-se, quero um relatório escrito com a descrição detalhada do projeto e com todos os cálculos seguindo o conteúdo das últimas aulas. Vocês terão um mês. O prazo é um pouco apertado, mas se as tarefas para cada membro forem atribuídas corretamente, vocês conseguirão fazer facilmente."</p>
+
+      <p>"Ai, sim, professor!!"</p>
+
+      <p>Os alunos comemoraram, enquanto se levantavam para juntar suas cadeiras e se organizar.</p>
+
+      <p>"Nunca pensei que ficaria feliz em ter que fazer um trabalho da faculdade… Acho que apenas as aulas irritantes do velho Leon conseguem causar isso na gente." comentou, de forma aborrecida, uma bela garota loira, com curvas acentuadas e seios firmes.</p>
+
+      <p>Ela usava uma camisa folgada, que mostrava levemente o sutiã pelas laterais e costas, e uma calça legging justa ao corpo. Pareciam ser roupas do tipo que se usa em uma academia.</p>
+
+      <p>"Bem, veja o lado bom, pelo menos não precisamos ficar escrevendo por horas de novo, Carla." Um rapaz mulato disse ao lado.</p>
+
+      <p>"Diga por si mesmo. Esse trabalho vai ser um porre, só de pensar na quantidade de cálculos que vamos ter que fazer já me dá náuseas. Eu nem lembro do conteúdo das últimas aulas." respondeu Carla.</p>
+
+      <p>"Se você focasse mais nas aulas e menos no Hugo, ainda lembraria do conteúdo! Soube que se 'empolgou' muito nesse último sábado." Uma garota do grupo falou de forma brincalhona.</p>
+
+      <p>"É melhor você fechar essa boca, se não quiser que eu mesma a feche!" A loira respondeu com uma falsa irritação.</p>
+
+      <p>"Hahahaaha."</p>
+
+      <p>O grupo riu e se divertiu, enquanto terminavam de arrumar suas coisas.</p>
+
+      <p>De repente, um jovem, que parecia ter 18 ou 19 anos, se levantou de sua cadeira e caminhou lentamente em direção ao grupo.</p>
+
+      <p>O rapaz tinha cerca de 1,76 de altura, sua aparência não era bonita e nem feia. A cor de sua pele era extremamente pálida, quase como se estivesse doente. Seus olhos eram castanhos escuros e seu cabelo preto e curto, um pouco bagunçado. Suas roupas pareciam muito modestas e maltratadas. Ele parecia ser o tipo que seria facilmente ignorado em meio a uma multidão, quase invisível.</p>
+
+      <p>Thiago, o rapaz mulato, percebeu rapidamente o jovem e falou ao grupo:</p>
+
+      <p>"Tsc… Olha quem tá vindo aí, aquele nerd estranho."</p>
+
+      <p>"Esse manezão. O que será que ele quer?" Carla questionou de forma fria.</p>
+
+      <p>O grupo notou o rapaz caminhando em direção a eles e cessaram rapidamente a conversa, lançando olhares levemente hostis e de zombaria. Era um comportamento em relação aos excluídos.</p>
+
+      <p>O rapaz parou em frente ao grupo e ficou em pé de forma estática. Parecia estar extremamente hesitante e desconfortável. Suas mãos estavam trêmulas e suavam frio.</p>
+
+      <p>"Err… Eu… Eu…"</p>
+
+      <p>Ele abriu a boca como se quisesse dizer algo, mas acabou não dizendo nada e apenas continuou a gaguejar.</p>
+
+      <p>Nesse momento, Carla perdeu a paciência e falou:</p>
+
+      <p>"Desembucha de uma vez, nerdão. O que caralhos você quer?"</p>
+
+      <p>O rapaz ficou atônito ao ser repreendido de forma tão agressiva pela garota loira. Ele parecia assustado e envergonhado, mas tentou ao máximo se acalmar e organizar seus pensamentos.</p>
+
+     
+    </div>
+  </article>
+</div>
+
+
+<!-- Sistema de Comentários -->
+<div class="comments-section">
+  <h2 class="comments-title">Comentários</h2>
+  
+  <!-- Formulário de Comentário -->
+  <div class="comment-form">
+    <h3>Deixe seu comentário</h3>
+    <form id="comment-form">
+      <div class="form-group">
+        <label for="comment-name">Nome:</label>
+        <input type="text" id="comment-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-text">Comentário:</label>
+        <textarea id="comment-text" name="comment" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar Comentário</button>
+    </form>
+  </div>
+  
+  <!-- Lista de Comentários -->
+  <div class="comments-list" id="comments-list">
+    <!-- Comentários serão exibidos aqui -->
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+        <h2>Contato</h2>
+        <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+        <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+        <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+    </div>
+
+    <div class="footer-column">
+        <h2>Informações</h2>
+        <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+        <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+        <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+    </div>
+
+    <div class="footer-column">
+        <h2 class="h2-none">Siga-nos</h2>
+        <div class="social-icons">
+            <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+            <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+            <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+        </div>
+        <div class="logoss">
+            <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="js/comentario-capitulo.js"></script>
+<script src="js/reader.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/header-login.js"></script>
+
+
+</body>
+</html>

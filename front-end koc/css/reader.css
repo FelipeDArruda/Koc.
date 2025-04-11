@@ -1,0 +1,150 @@
+/* --- NAVEGAÇÃO ENTRE CAPÍTULOS --- */
+.chapter-navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.nav-button {
+    background: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: #3a5a7d;
+    transform: scale(1.05);
+}
+
+/* --- CONTEÚDO DO CAPÍTULO --- */
+.chapter-content {
+    max-width: 1200px; /* Largura máxima ajustada */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 1.5rem; /* Adiciona um espaço interno */
+    line-height: 1.8; /* Melhora a leitura */
+    background: rgba(40, 19, 19, 0.025);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* --- MENU DE CONFIGURAÇÕES MODERNO --- */
+.settings-container {
+    position: relative;
+}
+
+.settings-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* MENU DE CONFIGURAÇÕES */
+.settings-menu {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.settings-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CABEÇALHO DO MENU */
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.settings-header h3 {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.settings-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* GRUPOS DE CONFIGURAÇÕES */
+.settings-group {
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.settings-group h4 {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+/* OPÇÕES DO MENU */
+.settings-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+    transition: background 0.2s;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.settings-option i {
+    font-size: 1.2rem;
+    color: #4a90e2;
+}
+
+.settings-option span {
+    font-size: 0.9rem;
+    color: rgb(255, 255, 255);
+}
+
+
+.settings-option.active {
+    background: #4a90e2;
+    color: white;
+}
+
+.settings-option.active i {
+    color: white;
+}
